@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <canvas id="tt" width="300" height="250" style="backgroud-color:aliceblue"></canvas>
+    <script>
+      var canvas = document.getElementById('tt');
+      var context = canvas.getContext('2d');
+      var img = new Image();
+      img.onload = function(){
+        context.drawImage(img,0,0,canvas.width,canvas.height); //canvas.width와 height는 이 사이즈에 맞추어서 사진을 넣는 방식이다.
+      }
+      img.src = "elsa.png";
+    </script>
+  </body>
+</html>

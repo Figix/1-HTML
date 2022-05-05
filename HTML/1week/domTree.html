@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang=ko dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML DOM 트리</title>
+  </head>
+  <body>
+    <h1>DOM 객체 p의 프로퍼티, 스타일, 이벤트 리스너</h1>
+    <hr>
+    <p id="firstP"
+    style="color:blue; background: yellow"
+    onclick="this.style.color='green'">이것은
+  <span style="color:red">문장입니다.</span> </p>
+  <script>
+    var p = document.getElementById('firstP');
+    var text = "p.id = " + p.id + "\n";
+    text += "p.tagName = " + p.tagName + "\n";
+    text += "p.innerHTML = " + p.innerHTML +"\n";
+    text += "p.style.color = " + p.style.color + "\n";
+    text += "p.onclick = " + p.onclick + "\n";
+    alert(text);
+  </script>
+  </body>
+</html>

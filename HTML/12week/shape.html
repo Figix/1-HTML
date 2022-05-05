@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>육각형 만들기</title>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="300" height="300"></canvas>
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var ctx = canvas.getContext('2d');
+      ctx.beginPath();
+      ctx.fillStyle = "yellow"; //채우기 색 선택
+      ctx.moveTo(150,10);
+      ctx.lineTo(290,65);
+      ctx.lineTo(290,225);
+      ctx.lineTo(150,290);
+      ctx.lineTo(10,225);
+      ctx.lineTo(10,65);
+      ctx.lineTo(290,65);
+      ctx.fill();//채우기
+    </script>
+  </body>
+</html>

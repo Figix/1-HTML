@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Image()로 이미지 로딩</title>
+    <script>
+      let files = ["background/image01.jpg","background/image02.jpg","background/image03.jpg","background/image04.jpg","background/image05.jpg"]
+      let imgs = new Array();
+      for(let i=0;i<files.length;i++){
+        imgs[i]=new Image();
+        imgs[i].src = files[i];
+      }
+      //다음 이미지를 출력하기 위해서 만드는 변수
+      let next = 0;
+      // let next = 0;
+      //next를 0으로 초기화하면 처음 장이 변화가 없음 next값이 증가 전에 들어가서 변화가 생기기 때문임.
+      //만약에 next 0로시작하고 싶다면 증가를 먼저 넣고 하면 가능함
+      function change(img){
+        next++;
+        next %= imgs.length;
+        img.src = imgs[next].src;
+        console.log('next = ',next);
+        // next++;
+        // next %= imgs.length;
+        // next가 5이상이 되면 나머지값이 0으로 되기에 01234 이런식으로 계속 순환하는 방식이 됨.
+      }
+    </script>
+  </head>
+  <body>
+    <h3>이미지 객체로 이미지 로딩</h3>
+    <hr>
+    <p>이미지를 클릭하면 다음 이미지를 보여줍니다.</p>
+    <!-- 940 640 this는 자기 자신 아래 태그에서는 image01임 -->
+    <img src="background/image01.jpg" alt="" width="960" height="640" onclick="change(this)">
+
+  </body>
+</html>

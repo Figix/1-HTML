@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>버튼색 변경하기</title>
+    <style>
+      *{margin: 0; padding: 0;}
+      .div1{height: 150px;background: red;}
+
+      .div1 #bts{height: 100px; width: 50px;
+        background-color: black; margin: 25px 50px 0 25px;
+      float: left;}
+
+      .div1 #bt_test1{height: 100px; width: 50px;
+        background-color: pink; margin: 25px 50px 0 25px;
+      float: left;}
+
+      .div1 #bt_test2{height: 100px; width: 50px;
+        background-color: yellow; margin: 25px 50px 0 25px;
+      float: left;}
+
+      .div1 #bts b{display: block; margin-top: 20px; color: white;}
+      .div1 #bt_test1 b{display: block; margin-top: 20px; color: black;}
+      .div1 #bt_test2 b{display: block; margin-top: 20px; color: red;}
+
+      .div2{height: 300px; width: 15%; background-color: yellow;
+      float: left;}
+      .ccc1{height: 300px; width: 15%; background-color: orange;
+      float: left;}
+      .ccc2{height: 300px; width: 15%; background-color: green;
+      float:left;}
+      .div3{height: 300px; width: 85%; background-color: blue;
+      float:left;}
+      #cc{margin-top: 50px; float: left;}
+
+    </style>
+  </head>
+  <body>
+    <div class="div1">
+      <div id="bts">
+        <!-- 버튼1을 클릭하면 bts을 bt_test1으로 변경 -->
+        <b id="bt1">버튼1</b>
+        <b id="bt2">버튼2</b>
+      </div>
+      <div id="textbox">
+
+      </div>
+    </div>
+    <div class="div2">
+      <input type="button" id="inp1" name="" value="주황색">
+      <input type="button" id="inp2" name="" value="초록색">
+    </div>
+    <div class="div3">
+
+    </div>
+    <script>
+      var div_bt1 = document.getElementById('bt1');
+      var div_bt2 = document.getElementById('bt2');
+      var bts = document.getElementById('bts');
+
+      var inp1 = document.getElementById('inp1');
+      var inp2 = document.getElementById('inp2');
+      var bts2 = document.getElementsByClassName("div2")[0];
+
+      var textbox = document.getElementById('textbox');
+
+      div_bt2.addEventListener("click", function(){
+        textbox.innerHTML="<h1 id ='cc'>자바스크립트에 오신 것을 환영합니다.";
+      })
+
+      //사용자의 행동(click, dbclick), 함수
+      div_bt1.addEventListener("click", function(){
+        bts.id = "bt_test1";
+      })
+      //버튼 2를 눌렀을 때 블랙 => 노랑, 글씨 색은 흰색 -> 레드
+      div_bt2.addEventListener("click", function(){
+        bts.id = "bt_test2";
+      })
+
+      inp1.addEventListener("mouseover", function(){
+        bts2.className="ccc1";
+      })
+      inp2.addEventListener("mouseover", function(){
+        bts2.className="ccc2";
+      })
+
+    </script>
+  </body>
+</html>

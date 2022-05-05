@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>배경에 사진 넣기</title>
+    <script>
+      var speed = 1000;
+      var imgpath = "images/";
+      var pic = new Array();
+      pic[0] = imgpath+"dog01.png";
+      pic[1] = imgpath+"dog02.png";
+      pic[2] = imgpath+"dog03.png";
+      pic[3] = imgpath+"dog04.png";
+      pic[4] = imgpath+"dog05.png";
+
+      var t;
+      var j =0;
+      var p = pic.length;
+
+      function runBGSlideshow(){
+        if(document.body){
+          document.body.background = pic[j];
+          //j값이 0값이므로 배경이 dog01.png로 이루어짐
+          j = j+1;
+          if(j>(p-1)) {// 배열의 최대값보다 크다면 0으로 초기화 즉 맨처음 dog01.png로 돌아오는 것
+            j = 0;
+          }
+          t = setTimeout('runBGSlideshow()',speed);
+        }
+      }
+    </script>
+  </head>
+  <body onload="runBGSlideshow()">
+
+  </body>
+</html>

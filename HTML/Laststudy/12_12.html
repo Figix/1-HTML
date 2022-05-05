@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div style="width:500px; height:500px; background:gray; ";>
+      <bang style="font-size: 15pt; font-weight: bold;">앙 여기 눌러줘요~</bang>
+    </div>
+    <script type="text/javascript">
+    var Cltext = document.getElementsByTagName("bang");
+    var count = 0;
+    Cltext[0].addEventListener("click", function(){
+      rainbow();
+    } )
+
+    function rainbow(){
+      count = (++count)%8
+      switch(count){
+        case 0:
+          Cltext[0].style.color="black";
+          break;
+        case 1:
+          Cltext[0].style.color="red";
+          break;
+        case 2:
+          Cltext[0].style.color="orange";
+          break;
+        case 3:
+          Cltext[0].style.color="yellow";
+          break;
+        case 4:
+          Cltext[0].style.color="green";
+          break;
+        case 5:
+          Cltext[0].style.color="blue";
+          break;
+        case 6:
+          Cltext[0].style.color="indigo";
+          break;
+        case 7:
+          Cltext[0].style.color="purple";
+          break;
+      }
+    }
+    setInterval(rainbow, 300);
+  </script>
+  </body>
+</html>

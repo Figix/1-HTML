@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      .div_color{color: #FF0000;}
+    </style>
+  </head>
+  <body>
+    <input type="text" id='input' name="" value="Hello world">
+    <button onclick="change()" type="button" name="button">change</button>
+    <div>김영철</div>
+    <div>이윤임</div>
+    <div>이성현</div>
+    <div>이은석</div>
+  </body>
+  <script>
+    // var ppp = document.getElementById('input');
+    document.getElementById('input').setAttribute("type","button");
+    function change(){
+      var divs = document.getElementsByTagName('div');
+      for(var i =0; i<divs.length; i++){
+        divs[i].setAttribute('class','div_color');
+      }
+    }
+  </script>
+</html>

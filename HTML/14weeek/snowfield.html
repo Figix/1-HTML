@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>눈 내리는 화면 만들기</title>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="500" height="300" style="border: 1px solid #000000">
+    캔버스를 지원하지 않습니다.</canvas>
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var ctx = canvas.getContext('2d');
+      var canW = ctx.canvas.width+100;
+      var canH = ctx.canvas.height+100;
+      var snowflaskes = [];
+      var totalCount = 100;
+
+      function addSnowflake(){
+        if(snowflaskes.length >= totalCount){
+          return;
+        }
+        var y = 0; //눈송이가 떨어질 y측 값을 넣을 변수
+        var x = Math.floor(Math.random()*canW)-100;
+        var size = Math.floor(Math.random()*3)+1;
+        snowflaskes.push({"x":x, "y":y, "size":size});
+      }
+
+      function snow(){ //눈송이를 만들어주는 메소드
+        addSnowflake();
+        ctx.fillStyle = "rgba(255,255,255,0.75)";
+        for(var i in snowflaskes){//foreach
+          ctx.beginPath();
+          var ty = snowflaskes[i].y += snowflaskes[i].size*0.5;
+          ctx.arc(snowflaskes[i].x,snowflaskes[i].y++,snowflaskes[i].size*0.5,0,Math.PI*2);
+          ctx.fill();
+          if(snowflaskes[i].y > canH){
+            snowflaskes.splice(i,1); //(변경할 인덱스, 삭제할 개수)
+          }
+        }
+      }
+
+      function displayCount(){
+        ctx.fillStyle = "white";
+        ctx.font = "bold 14px Arial, sans-serif";
+        ctx.fillText(snowflaskes.length,10,20);
+      }
+
+      var bgImage = new Image();
+      bgImage.src = "winternight.JPG";
+
+      function animate(){
+        ctx.clearRect(0,0,canW,canH);
+        ctx.drawImage(bgImage,0,0);
+        displayCount();
+        snow();
+        ctx.restore();
+      }
+      //0.03초마다 실행되는 것
+      var animateInterval = setInterval(animate, 30);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <button onclick="numberPlus()" type="button" name="button">
+      넘버 증가
+    </button>
+    <button onclick="numberEnd()" type="button" name="button">
+      중지!
+    </button>
+    <h1 id="btn"></h1>
+    <script>
+      var itv;
+      var i = 0;
+      var btn = document.getElementById('btn');
+
+      function numberPlus(){
+        itv = setInterval(function (){
+          i++;
+          btn.innerHTML = i;
+        }, 1000);
+      }
+
+      function numberEnd(){
+          clearInterval(itv);
+          i=0;
+          bnt.innerHTML = i;
+      }
+    </script>
+  </body>
+</html>

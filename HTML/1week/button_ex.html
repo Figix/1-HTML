@@ -1,0 +1,30 @@
+<<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>색 바꾸기 실습</title>
+    <style media="screen">
+      #background{height: 100px; width: 400px; background-color:gray;}
+      #color_test1{background-color:pink;}
+      #color_test2{height: 100px; width: 400px; background-color:yellow;}
+    </style>
+  </head>
+  <body>
+    <div id="background">
+      <b id="pink"> 분홍</b>
+      <b id="yellow"> 노랑</b>
+    </div>
+    <script>
+      var background = document.getElementById('background');
+      var bt_pink = document.getElementById('pink');
+      var bt_yellow = document.getElementById('yellow');
+
+      bt_pink.addEventListener("click", function(){
+        background.id = "color_test1";
+      });
+      bt_yellow.addEventListener("click", function(){
+        background.id = "color_test2";
+      });
+    </script>
+  </body>
+</html>

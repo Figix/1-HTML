@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>포토라마 우리도 만들어 보자</title>
+    <style media="screen">
+      *{margin: 0;padding: 0;}
+      section{height: 350px; background-color: pink; text-align: center;}
+      article{width: 500px; height: 250px; display: inline-block; background-color: black;
+      margin: 30px auto 0 auto; position: relative;}
+      article img{position: absolute; top: 0; left: 0; width: 500px; height: 250px; display: none;}
+    </style>
+  </head>
+  <body>
+    <section>
+      <article>
+        <img id="img01" src="background/image01.jpg" alt="">
+        <img id="img02" src="background/image02.jpg" alt="">
+        <img id="img03" src="background/image03.jpg" alt="">
+        <img id="img04" src="background/image04.jpg" alt="">
+        <img id="img05" src="background/image05.jpg" alt="">
+      </article>
+      <br>
+      <img id="B_bt" src="background/back.png" alt="">
+      <img id="N_bt" src="background/next.png" alt="">
+    </section>
+    <script>
+      var L_bt = document.getElementById('B_bt');
+      var N_bt = document.getElementById('N_bt');
+
+      var img01 = document.getElementById('img01');
+      var img02 = document.getElementById('img02');
+      var img03 = document.getElementById('img03');
+      var img04 = document.getElementById('img04');
+      var img05 = document.getElementById('img05');
+      var count = 0;
+
+      N_bt.addEventListener('click',function(){
+        count++;
+        console.log(count);
+        if(count == 1){
+          img05.style.display = 'none';
+          img01.style.display = 'block';
+          // count++;
+        } else if(count == 2){
+          img01.style.display = 'none';
+          img02.style.display = 'block';
+          // count++;
+        } else if(count == 3){
+          img02.style.display = 'none';
+          img03.style.display = 'block';
+          // count++;
+        } else if(count == 4){
+          img03.style.display = 'none';
+          img04.style.display = 'block';
+          // count++;
+        } else if(count == 5){
+          img04.style.display = 'none';
+          img05.style.display = 'block';
+          count=0;
+        }
+      })
+      L_bt.addEventListener('click',function(){
+        count--;
+        if(count<=0){
+          count=5;
+        }
+        console.log(count);
+        if(count == 1){
+          img02.style.display = 'none';
+          img01.style.display = 'block';
+          // count=4;
+        } else if(count == 2){
+          img03.style.display = 'none';
+          img02.style.display = 'block';
+          // count--;
+        } else if(count == 3){
+          img04.style.display = 'none';
+          img03.style.display = 'block';
+          // count--;
+        } else if(count == 4){
+          img05.style.display = 'none';
+          img04.style.display = 'block';
+          // count--;
+        } else if(count == 5){
+          img01.style.display = 'none';
+          img05.style.display = 'block';
+          // count--;
+        }
+      })
+
+    </script>
+  </body>
+</html>

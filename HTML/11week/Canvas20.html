@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>사각형 그리기</title>
+  </head>
+  <body>
+    <h3>사각형 그리기</h3>
+    <hr>
+    <canvas id="myCanvas" width="300" height="300" style="background-color: aliceblue"></canvas>
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+      context.beginPath();
+      for(var i=0;i<5;i++){
+        context.rect(10+i*30, 10+i*30, 50, 50);
+        //50*50사각형을 30i+10,30i+10 좌표에 총 5개 사각형 생성함 10,10에서부터 오른쪽 하단으로 30간격씩 생성할 것
+      }
+      context.strokeStyle = 'magenta';
+      context.stroke();
+    </script>
+  </body>
+</html>

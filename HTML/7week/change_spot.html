@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>바둑판 만들기</title>
+    <style media="screen">
+      .div{width: 300px;}
+      .gray, .red{width: 100px; height: 100px; background-color: gray;
+        float: left;}
+        button{background-color: hotpink;}
+    </style>
+    <script>
+      window.onload = function(){
+        document.getElementsByClassName('bu')[0].addEventListener("click",
+        function(){
+          for(var i=0;i<document.getElementsByClassName('red').length;i++){
+            document.getElementsByClassName('red')[i].style.backgroundColor = "red";
+          }
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <button class="bu" type="button" name="button">변해라</button>
+    <br><br>
+    <div class="div">
+      <div class="red"></div> <div class="gray"></div> <div class="red"></div>
+    </div>
+    <div class="div">
+      <div class="gray"></div> <div class="red"></div> <div class="gray"></div>
+    </div>
+    <div class="div">
+      <div class="red"></div> <div class="gray"></div><div class="red"></div>
+    </div>
+
+  </body>
+</html>

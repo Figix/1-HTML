@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>방문 시간에 따라 변하는 배경색</title>
+  </head>
+  <body>
+    <h3>페이지 방문 초시간이 짝수라면  Violet, 홀수라면 lightskyblue</h3>
+    <hr>
+    <script>
+      // 현재 시간을 가진 date 코어 객체 선언
+      var current = new Date();
+      // 초가 짝수인지 체크하는 조건문
+      if(current.getSeconds()%2==0){
+        document.body.style.backgroundColor="violet";
+      } else{
+        document.body.style.backgroundColor="lightskyblue";
+      }
+      document.write("현재시간:");
+      document.write(current.getHours(),"시,");
+      document.write(current.getMinutes(),"분,");
+      document.write(current.getSeconds(),"초");
+    </script>
+  </body>
+</html>

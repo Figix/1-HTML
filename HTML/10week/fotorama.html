@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>포토라마 우리도 만들어 보자</title>
+    <style media="screen">
+      *{margin: 0; padding: 0;}
+      section{height: 350px; background-color: pink; text-align: center; position: relative;}
+      .slide{position: absolute; width: 900px; top: 50%; left: 50%;
+        transform: translateX(-50%)translateY(-50%);}
+      article{width: 500px; height: 250px; display: inline-block; background-color: black;
+      margin: 30px auto 0 auto; position: relative;}
+      article img{position: absolute; top: 0; left: 0; width: 500px; height: 250px; display: none;}
+      #B_bt, #N_bt{float: left; margin-top: 100px;}
+      .point{display: inline-block;}
+      ul{margin-top: 500px;}
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="slide">
+          <img id="B_bt" src="background/back.png" alt="">
+          <article>
+            <img id="img01" src="background/image01.jpg" alt="">
+            <img id="img02" src="background/image02.jpg" alt="">
+            <img id="img03" src="background/image03.jpg" alt="">
+            <img id="img04" src="background/image04.jpg" alt="">
+            <img id="img05" src="background/image05.jpg" alt="">
+          </article>
+          <img id="N_bt" src="background/next.png" alt="">
+      </div>
+      <br>
+      <ul id="points">
+        <li class="point" id="po1">
+          <img src="background/point.png" alt="">
+        </li>
+        <li class="point" id="po2">
+          <img src="background/point.png" alt="">
+        </li>
+        <li class="point" id="po3">
+          <img src="background/point.png" alt="">
+        </li>
+        <li class="point" id="po4">
+          <img src="background/point.png" alt="">
+        </li>
+        <li class="point" id="po5">
+          <img src="background/point.png" alt="">
+        </li>
+      </ul>
+    </section>
+    <script>
+      var L_bt = document.getElementById('B_bt');
+      var N_bt = document.getElementById('N_bt');
+
+      var img01 = document.getElementById('img01');
+      var img02 = document.getElementById('img02');
+      var img03 = document.getElementById('img03');
+      var img04 = document.getElementById('img04');
+      var img05 = document.getElementById('img05');
+      var count = 1;
+      imgview()
+
+      N_bt.addEventListener('click', function () {
+        console.log("count = ", count);
+        count++;
+        if(count>5){
+          count=1;
+        }
+        imgview();
+      });
+
+      L_bt.addEventListener('click', function () {
+        console.log("count = ", count);
+        count--;
+        if(count<=0){
+          count=5;
+        }
+        imgview();
+      });
+
+      po1.addEventListener('click',function(){
+        count = 1;
+        imgview();
+      });
+
+      po2.addEventListener('click',function(){
+        count = 2;
+        imgview();
+      });
+
+      po3.addEventListener('click',function(){
+        count = 3;
+        imgview();
+      });
+
+      po4.addEventListener('click',function(){
+        count = 4;
+        imgview();
+      });
+
+      po5.addEventListener('click',function(){
+        count = 5;
+        imgview();
+      });
+
+
+      function imgview(){
+        img01.style.display = 'none';
+        img02.style.display = 'none';
+        img03.style.display = 'none';
+        img04.style.display = 'none';
+        img05.style.display = 'none';
+
+        if(count == 1){
+          img01.style.display = 'block';
+        } else if(count == 2){
+          img02.style.display = 'block';
+        } else if(count == 3){
+          img03.style.display = 'block';
+        } else if(count == 4){
+          img04.style.display = 'block';
+        } else if(count == 5){
+          img05.style.display = 'block';
+        }
+      }
+
+
+    </script>
+  </body>
+</html>

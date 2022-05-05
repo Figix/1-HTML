@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>선의 색과 굵기</title>
+  </head>
+  <body>
+    <h3>선의 색과 굵기</h3>
+    <hr>
+    <canvas id="myCanvas" width="180" height="300" style="background-color:aliceblue"></canvas>
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext("2d");
+      //1픽셀의 blue 직선 그릐기
+      context.beginPath();
+      context.moveTo(20,20);
+      context.lineTo(150,50);
+      context.strokeStyle='blue';
+      context.stroke();
+      //10픽셀 yellowgreen 사각형 그릐기
+      context.beginPath();
+      context.rect(20,80,120,50);
+      context.lineWidth = 10; //선의 굵기 조정
+      context.strokeStyle = 'yellowgreen';
+      context.stroke();
+    </script>
+  </body>
+</html>

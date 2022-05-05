@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>배우자 이름 매칭하기</title>
+    <style media="screen">
+      *{margin: 0; padding :0;}
+      .div1{width: 25%; height: 300px; float: left;}
+      .div_1{background-color: red;}
+      .div_2{background-color: blue;}
+      .div_3{background-color: black;}
+      .div_4{background-color: yellow;}
+      #bt01{width: 100px; margin: 30px 0 0 30px;}
+      #bt02{width: 100px; margin: 30px 0 0 30px;}
+      .div1 h1{color: gray;}
+    </style>
+
+    <script>
+      window.onload=function(){
+        var divBox = document.getElementsByClassName('div1');
+
+        // var divBox1 = document.getElementsByClassName('div1')[0];
+        // var divBox2 = document.getElementsByClassName('div1')[1];
+        // var divBox3 = document.getElementsByClassName('div1')[2];
+        // var divBox4 = document.getElementsByClassName('div1')[3];
+
+        var bt01 = document.getElementById('bt01');
+        var bt02 = document.getElementById('bt02');
+
+        var name1 = document.getElementById('name1');
+        var name2 = document.getElementById('name2');
+        var name3 = document.getElementById('name3');
+
+        bt01.addEventListener("click", function(){
+          divBox[0].style.backgroundColor = "orange";
+          divBox[1].style.backgroundColor = "orange";
+          divBox[2].style.backgroundColor = "orange";
+          divBox[3].style.backgroundColor = "orange";
+
+          // divBox1.style.backgroundColor = "orange";
+          // divBox2.style.backgroundColor = "orange";
+          // divBox3.style.backgroundColor = "orange";
+          // divBox4.style.backgroundColor = "orange";
+
+          // divBox1.className = "div1 div_1";
+          // divBox2.className = "div1 div_1";
+          // divBox3.className = "div1 div_1";
+          // divBox4.className = "div1 div_1";
+        });
+        bt02.addEventListener("click", function(){
+          divBox[0].style.backgroundColor = "red";
+          divBox[1].style.backgroundColor = "blue";
+          name1.innerHTML="<h style='color:gray'>최수종</h>";
+          divBox[2].style.backgroundColor = "black";
+          name2.innerHTML="<h style='color:gray'>장동건</h>";
+          divBox[3].style.backgroundColor = "yellow";
+          name3.innerHTML="<h style='color:gray'>문희준</h>";
+        });
+
+        var count1 = 0;
+        var count2 = 0;
+        var count3 = 0;
+
+        name1.addEventListener('click', function(){
+          if(count1 == 1){
+            name1.innerHTML="<h6 style='color:gray'>최수종</h6>";
+            divBox[1].style.backgroundColor = 'orange';
+            count1=0;
+          } else{
+              name1.innerHTML = "<h6 style='color:gray'>하희라</h6>";
+              divBox[1].style.backgroundColor = 'hotpink';
+              count1=1;
+            }
+        })
+        // 장동건 -> 고소영
+        name2.addEventListener('click', function(){
+          if(count2 == 1){
+            name2.innerHTML="<h6 style='color:gray'>장동건</h6>";
+            divBox[2].style.backgroundColor = 'orange';
+            count2=0;
+          } else{
+              name2.innerHTML = "<h6 style='color:gray'>고소영</h6>";
+              divBox[2].style.backgroundColor = 'hotpink';
+              count2=1;
+            }
+        })
+        // 문희준 -> 소율
+        name3.addEventListener('click', function(){
+          if(count3 == 1){
+            name3.innerHTML="<h6 style='color:gray'>문희준</h6>";
+            divBox[3].style.backgroundColor = 'orange';
+            count3=0;
+          } else{
+              name3.innerHTML = "<h6 style='color:gray'>소율</h6>";
+              divBox[3].style.backgroundColor = 'hotpink';
+              count3=1;
+            }
+        })
+
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="div1 div_1">
+      <img id="bt01" src="image/bt01.png" alt=""><br>
+      <img id="bt02" src="image/bt02.png" alt="">
+    </div>
+
+    <div class="div1 div_2">
+      <h1 id="name1">최수종</h1>
+    </div>
+    <div class="div1 div_3">
+      <h1 id="name2">장동건</h1>
+    </div>
+    <div class="div1 div_4">
+      <h1 id="name3">문희준</h1>
+
+    </div>
+  </body>
+
+</html>

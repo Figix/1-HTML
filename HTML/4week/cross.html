@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>tagName 사용 예제</title>
+    <style media="screen">
+    .total{width: 210px;}
+    article{width: 70px; height: 70px; background-color:pink;float:left;}
+    section{width: 70px; height: 70px; background-color:pink;float:left;}
+    </style>
+  </head>
+  <body>
+    <button id="push" type="button" name="button">바뀌어라</button>
+    <div class="total">
+      <article></article><section></section><article></article>
+      <section></section><section></section><section></section>
+      <article></article><section></section><article></article>
+      <article></article><section></section><article></article>
+    </div>
+    <script>
+      var push = document.getElementById('push');
+      var section = document.getElementsByTagName('section');
+      push.addEventListener('click', function(){
+        for(var i=0;i<section.length;i++){
+          section[i].style.backgroundColor = 'black';
+        }
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <canvas id="canvas" width="600" height="700"></canvas>
+    <script>
+      var ctx;
+
+      ctx=document.getElementById("canvas").getContext('2d');
+
+      //바깥쪽 큰 방패
+      ctx.clearRect(0,0,600,500);
+      ctx.beginPath();
+      ctx.fillStyle = "#D6BA32";
+      ctx.moveTo(50,50);
+      ctx.lineTo(550,50);
+      ctx.lineTo(510,620);
+      ctx.lineTo(300,680);
+      ctx.lineTo(90,620);
+      ctx.closePath();
+      ctx.fill();
+
+      //안쪽 반쪽 방패
+      ctx.fillStyle = "#FFD93C";
+      ctx.beginPath();
+      ctx.moveTo(300,100);
+      ctx.lineTo(500,100);
+      ctx.lineTo(460,570);
+      ctx.lineTo(300,630);
+      ctx.closePath();
+      ctx.fill();
+
+      //왼쪽 문구
+      ctx.beginPath();
+      ctx.fillStyle = "#FFFFFF";
+      ctx.moveTo(280,220);
+      ctx.lineTo(280,490);
+      ctx.lineTo(140,460);
+      ctx.lineTo(140,420);
+      ctx.lineTo(240,440);
+      ctx.lineTo(240,220);
+      ctx.fill();
+
+      //오른쪽 문구
+      ctx.beginPath();
+      ctx.fillStyle = "#FFFFFF";
+      ctx.moveTo(320,220);
+      ctx.lineTo(450,220);
+      ctx.lineTo(450,270);
+      ctx.lineTo(360,270);
+      ctx.lineTo(360,350);
+      ctx.lineTo(442,330);
+      ctx.lineTo(432,460);
+      ctx.lineTo(320,490);
+      ctx.lineTo(320,440);
+      ctx.lineTo(400,420);
+      ctx.lineTo(400,390);
+      ctx.lineTo(320,410);
+      ctx.fill();
+
+    </script>
+  </body>
+</html>

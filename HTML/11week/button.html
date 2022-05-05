@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .box{height: 50px; display: block;}
+    </style>
+  </head>
+  <body>
+    <button class="bu" type="button" name="button">버튼1</button>
+    <button class="bu" type="button" name="button">버튼2</button>
+    <button class="bu" type="button" name="button">버튼3</button>
+    <button class="bu" type="button" name="button">버튼4</button>
+    <div class="box" id="box1">
+
+    </div>
+    <div class="box" id="box2">
+    </div>
+    <div class="box" id="box3">
+    </div>
+    <div class="box" id="box4">
+    </div>
+    <script>
+      document.getElementsByClassName('bu')[0].addEventListener("click",color(0))
+      document.getElementsByClassName('bu')[1].addEventListener("click",color(1))
+      document.getElementsByClassName('bu')[2].addEventListener("click",color(2))
+      document.getElementsByClassName('bu')[3].addEventListener("click",color(3))
+      function color(i){
+        switch (i) {
+          case 0:
+            // document.getElementsByClassName('box')[i].style.backgroundColor = "red";
+            document.getElementById('box1').style.backgroundColor = "red";
+            break;
+          case 1:
+            // document.getElementsByClassName('box')[i].style.backgroundColor = "blue";
+            document.getElementById('box2').style.backgroundColor = "blue";
+            break;
+          case 2:
+            // document.getElementsByClassName('box')[i].style.backgroundColor = "yellow";
+            document.getElementById('box3').style.backgroundColor = "yellow";
+            break;
+          case 3:
+            // document.getElementsByClassName('box')[i].style.backgroundColor = "green";
+            document.getElementById('box4').style.backgroundColor = "green";
+            break;
+        }
+      }
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>innerHTML과 getElementById 예제</title>
+    <style media="screen">
+      .box{width: 800px; height: 150px;}
+      button{width: 200px; height: 50px;}
+    </style>
+  </head>
+  <body>
+    <h1>VR게임앱학과 행사 안내</h1>
+    <div class="box">
+      <button id="bt01" type="button" name="button">
+        <h3>일정</h3>
+      </button> <br>
+      <b id="text01"></b>
+    </div>
+    <div class="box">
+      <button id="bt02" type="button" name="button">
+        <h3>일시</h3>
+      </button> <br>
+      <b id="text02"></b>
+    </div>
+    <div class="box">
+      <button id="bt03" type="button" name="button">
+        <h3>세부 내용</h3>
+      </button> <br>
+      <b id="text03"></b>
+    </div>
+    <script>
+      var bt01 = document.getElementById('bt01');
+      var bt02 = document.getElementById('bt02');
+      var bt03 = document.getElementById('bt03');
+
+      var text01 = document.getElementById('text01');
+      var text02 = document.getElementById('text02');
+      var text03 = document.getElementById('text03');
+
+      bt01.addEventListener("click", function(){
+        text01.innerHTML = "202*년 3월 18일";
+      })
+      bt02.addEventListener("click", function(){
+        text02.innerHTML = "17시부터 늦은 밤까지~";
+      })
+      bt03.addEventListener("click", function(){
+        text03.innerHTML = "개교 기념일을 축하합시다~";
+      })
+
+    </script>
+  </body>
+</html>

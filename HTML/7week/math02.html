@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>난수 발생2</title>
+  </head>
+  <body>
+    <button onclick="myPush()" type="button" name="button">당첨자는!</button>
+    <p id="show"></p>
+    <script>
+    function myPush(){
+      var names = ["이윤임","김영철","최영희","김철수"];
+      document.getElementById('show').innerHTML
+       = names[parseInt(Math.random()*names.length)];
+    }
+
+    </script>
+  </body>
+</html>

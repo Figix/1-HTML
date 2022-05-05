@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>className 활용</title>
+    <script>
+      function tryIt(){
+        var list = document.getElementsByClassName('one');
+        list[0].innerHTML = "바뀐 첫번째 div 요소";
+        list[1].innerHTML = "바뀐 두번째 div 요소";
+        list[2].innerHTML = "바뀐 세번째 div 요소";
+        list[3].innerHTML = "여긴 없지롱~";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="one">
+      첫번째 div 요소
+    </div>
+    <div class="one">
+      두번째 div 요소
+    </div>
+    <div class="one">
+      세번째 div 요소
+    </div>
+    <button onclick="tryIt()" type="button" name="button">눌러봐</button>
+
+  </body>
+</html>

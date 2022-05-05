@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>VR게임앱학과 학술제</title>
+    <style media="screen">
+      .box{
+        /* 클래스 */
+        height: 100px;
+      }
+      button{
+        /* 태그 */
+        width: 150px;
+      }
+    </style>
+    <script>
+      window.onload = function(){
+        var button = document.getElementsByClassName('button');
+        var text = document.getElementsByClassName('text');
+
+        button[0].addEventListener("click",function(){
+          text[0].innerHTML = "202*년 11월 *일";
+        })
+        button[1].addEventListener("click", function(){
+          text[1].innerHTML = "17시부터 늦은 밤까지~"
+        })
+        button[2].addEventListener("click", function(){
+          text[2].innerHTML = "마음만 가지고 오세요~";
+        })
+        button[3].addEventListener("click", function(){
+          text[3].innerHTML = "거대한 인형~";
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <h1>학술제 안내</h1>
+    <div class="box">
+      <button class="button" type="button" name="button">
+        <h3>일정</h3>
+      </button> <br>
+      <b class="text"></b>
+    </div>
+    <div class="box">
+      <button class="button" type="button" name="button">
+        <h3>일시</h3>
+      </button> <br>
+      <b class="text"></b>
+    </div>
+    <div class="box">
+      <button class="button" type="button" name="button">
+        <h3>세부 내용</h3>
+      </button> <br>
+      <b class="text"></b>
+    </div>
+    <div class="box">
+      <button class="button" type="button" name="button">
+        <h3>이벤트 상품</h3>
+      </button> <br>
+      <b class="text"></b>
+    </div>
+
+  </body>
+</html>

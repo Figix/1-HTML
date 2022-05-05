@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p>-육각형을 그려보자고!</p>
+    <br>
+    <canvas id="myCanvas" width="500" height="500" style="background-color: skyblue"></canvas>
+    <script>
+      var canvas=document.getElementById('myCanvas');
+      var context = canvas.getContext("2d");
+
+      context.beginPath();
+      context.strokeStyle = "yellow";
+      context.moveTo(250,0);
+      context.lineTo(500,125);
+      context.lineTo(500,375);
+      context.lineTo(250,500);
+      context.lineTo(0,375);
+      context.lineTo(0,125);
+      context.lineTo(250,0);
+      context.fillStyle = "yellow";
+      context.stroke();
+      context.fill();
+    </script>
+  </body>
+</html>

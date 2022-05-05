@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p id ="Age"></p>
+    <script>
+    var string;
+      var age = prompt('당신의 나이는?', '');
+      if(age>=20){
+        string = "당신은 성인이니 독립하세요!";
+      } else if(age<20){
+        string = "아직 독립은 어렵겠군요!";
+      }
+      document.getElementById('Age').innerHTML=string;
+    </script>
+
+  </body>
+</html>

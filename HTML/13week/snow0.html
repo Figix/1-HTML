@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>눈 내리는 화면 만들기</title>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="500" height="281" style="border: 1px solid #000000">
+    이 브라우저는 캔버스를 지원안함</canvas>
+    <!-- border는 캔버스의 테두리를 만들어줌 -->
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var ctx = canvas.getContext("2d");
+      var canW = ctx.canvas.width;
+      var canH = ctx.canvas.height;
+      var snowflakes = [];
+      var totalCount = 10;
+      function addsnowflake(){
+        if(snowflakes.length >= totalCount){
+          return;
+        }
+        var y =0;
+        var x = Math.floor(Math.random()*canW)+1;
+        var size = Math.floor(Math.random()*3)*+1;
+      }
+      function snow(){
+        ctx.fillStyle = "rgba(255,255,255,0.75)"; //흰색, 투명도 0.75
+        ctx.beginPath();
+        ctx.arc(x,y++,size,0,Math.PI*2);
+        ctx.fill();
+      }
+
+      var bgImage = new Image();
+      bgImage.src = "image1/winternight.JPG";
+
+      function animate(){
+        ctx.clearRect(0,0,canW,canH);
+        ctx.drawImage(bgImage,0,0);
+        snow();
+      }
+
+      var animateInterval = setInterval(animate,30);
+    </script>
+  </body>
+</html>

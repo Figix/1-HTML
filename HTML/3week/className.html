@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>이미지 사이즈 변경하기</title>
+    <style media="screen">
+      *{margin: 0; padding: 0;}
+      .total{width: 900px; margin: 0 auto;}
+      header{background-color: pink; position : relative; height: 50px;}
+      header h1{color: brown; position: absolute; top: 50%; left: 50%;
+      transform: translateX(-50%)translateY(-50%);}
+      .header{text-align; conter;}
+      .pic{width: 400px;}
+      .cc{width: 550px;}
+      .pic{width: 400px;}
+      .div{height: 420px; margin top: 10px;}
+    </style>
+  </head>
+  <body>
+    <div class="total">
+      <header>
+        <h1>ClassName 예제</h1>
+      </header>
+      <div class="header">
+        <div class="div">
+          <img class="pic" id="pic1" src="image01.jpg" alt="">
+        </div>
+        <div class="div">
+          <img class="pic" id="pic2" src="image02.jpg" alt="">
+        </div>
+        <div class="div">
+          <img class="pic" id="pic3" src="image03.jpg" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="total">
+
+    </div>
+    <div class="total">
+
+    </div>
+    <script>
+      var img1 = document.getElementsByClassName('pic')[0];
+      var img2 = document.getElementsByClassName('pic')[1];
+      var img3 = document.getElementsByClassName('pic')[2];
+      var totl = document.getElementsByClassName('total');
+      console.log(totl);
+      console.log(totl[0]);
+      console.log(totl[1]);
+      var pic1 = document.getElementById('pic1');
+      var pic2 = document.getElementById('pic2');
+      var pic3 = document.getElementById('pic3');
+
+      var count1 = 1;
+      var count2 = 1;
+      var count3 = 1;
+
+      // img1.addEventListener("click", function(){
+      //   if(count1==0){
+      //     pic1.className = "cc";
+      //     count1 = 1;
+      //   }else{
+      //     pic1.className =  "cc1";
+      //     count1 = 0;
+      //   }
+      // })
+
+      img1.addEventListener("mouseover", function() {
+        if(count1==0){
+          pic1.className = 'pic';
+          count1=1;
+        } else{
+          pic1.className = 'cc';
+          count1 = 0;
+        }
+      })
+      img2.addEventListener("mouseover", function() {
+        if(count1==0){
+          pic2.className = 'pic';
+          count1=1;
+        } else{
+          pic2.className = 'cc';
+          count1 = 0;
+        }
+      })
+      img3.addEventListener("mouseover", function() {
+        if(count1==0){
+          pic3.className = 'pic';
+          count1=1;
+        } else{
+          pic3.className = 'cc';
+          count1 = 0;
+        }
+      })
+    </script>
+  </body>
+</html>

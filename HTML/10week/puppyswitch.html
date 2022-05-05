@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>개사진 앨범</title>
+    <style media="screen">
+      div{height: 300px; width: 600px; background-color: red; position: relative;}
+      img{position: absolute; top: 8%; left: 8%; transfoprm: translateX(-50%)translateY(-50%);
+      display: none;}
+    </style>
+  </head>
+  <body>
+    <button class="dogPic"type="button" name="button">개사진1</button>
+    <button class="dogPic"type="button" name="button">개사진2</button>
+    <button class="dogPic"type="button" name="button">개사진3</button>
+    <button class="dogPic"type="button" name="button">개사진4</button>
+    <button class="dogPic"type="button" name="button">개사진5</button>
+    <br>
+    <div class="">
+      <img class="class_img" src="images/dog01.png" alt="">
+      <img class="class_img" src="images/dog02.png" alt="">
+      <img class="class_img" src="images/dog03.png" alt="">
+      <img class="class_img" src="images/dog04.png" alt="">
+      <img class="class_img" src="images/dog05.png" alt="">
+    </div>
+    <script>
+      const dogPic1 = document.getElementsByClassName('dogPic')[0];
+      const dogPic2 = document.getElementsByClassName('dogPic')[1];
+      const dogPic3 = document.getElementsByClassName('dogPic')[2];
+      const dogPic4 = document.getElementsByClassName('dogPic')[3];
+      const dogPic5 = document.getElementsByClassName('dogPic')[4];
+
+      const class_img = document.getElementsByClassName('class_img');
+
+      class_img[0].style.display = 'block';
+
+      dogPic1.addEventListener('click', function(){
+        class_img[0].style.display = 'block';
+        class_img[1].style.display = 'none';
+        class_img[2].style.display = 'none';
+        class_img[3].style.display = 'none';
+        class_img[4].style.display = 'none';
+      });
+      dogPic2.addEventListener('click', function(){
+        class_img[0].style.display = 'none';
+        class_img[1].style.display = 'block';
+        class_img[2].style.display = 'none';
+        class_img[3].style.display = 'none';
+        class_img[4].style.display = 'none';
+      });
+      dogPic3.addEventListener('click', function(){
+        class_img[0].style.display = 'none';
+        class_img[1].style.display = 'none';
+        class_img[2].style.display = 'block';
+        class_img[3].style.display = 'none';
+        class_img[4].style.display = 'none';
+      });
+      dogPic4.addEventListener('click', function(){
+        class_img[0].style.display = 'none';
+        class_img[1].style.display = 'none';
+        class_img[2].style.display = 'none';
+        class_img[3].style.display = 'block';
+        class_img[4].style.display = 'none';
+      });
+      dogPic5.addEventListener('click', function(){
+        class_img[0].style.display = 'none';
+        class_img[1].style.display = 'none';
+        class_img[2].style.display = 'none';
+        class_img[3].style.display = 'none';
+        class_img[4].style.display = 'block';
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <canvas id="arcCanvas" style="background-color: aliceblue" width="200" height="400">
+    이 브라우저는 캔버스를 지원하지 않습니다.</canvas>
+    <script>
+        // var ctx = document.getElementById("arcCanvas").getContext("2d");
+        var canvas = document.getElementById("arcCanvas")
+        var context = canvas.getContext("2d");
+
+        context.beginPath();
+        context.arc(80,220,50,0,1.5*Math.PI,false);
+        context.strokeStyle = 'violet';
+        context.lineWidth = 20;
+        context.stroke();
+
+
+        context.beginPath();
+        context.strokeStyle = 'magenta';
+        // 100,70지점에 반지름이 30인  270인 호를 3시방향에서 시작해서 반시계 방향으로 그리기
+        context.arc(100,70,30,0,1.5*Math.PI,false);
+        context.stroke();
+        context.lineWidth = 1;
+
+        context.beginPath();
+        context.strokeStyle = 'blue';
+        context.arc(100,70,50,Math.PI/2,Math.PI,true);
+        context.stroke();
+        context.lineWidth = 1;
+
+        context.beginPath();
+        context.moveTo(80,340);
+        context.arc(80,340,50,0,1.5*Math.PI);
+        context.fillStyle = 'yellowgreen';
+        context.fill();
+        context.strokeStyle = 'red';
+        context.lineWidth = 20;
+        context.stroke();
+
+
+    </script>
+
+  </body>
+</html>

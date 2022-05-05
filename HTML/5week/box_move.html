@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>박스 이동하기 01</title>
+    <style media="screen">
+      *{margin: 0; padding: 0;}
+      section{width: 900px; height: 350px; background-color : pink;
+      position : relative;}
+      #box{width: 60px;height:60px;position: absolute;top:0
+      left: 0; background-color:yellow;}
+      div{text-align: center; font-size:50px;background-color:black;
+      color: white; width: 60px; height: 60px; cursor: pointer;}
+      #btT{margin-left: 60px;}
+      #btL{margin-right: 60px; float: left;}
+      #btR{float: left;}
+      #btB{margin: 60px 0 0 -120px; float: left;}
+    </style>
+    <script>
+      window.onload=function(){
+        var box = document.getElementById('box');
+        var btT = document.getElementById('btT');
+        var btL = document.getElementById('btL');
+        var btR = document.getElementById('btR');
+        var btB = document.getElementById('btB');
+        var posX = 0;
+        var posY = 0;
+
+        // 좌측으로 이동
+        btL.addEventListener('click', function(){
+          console.log("posX=",posX);
+          if(posX > 0)
+            posX -= 10;
+          box.style.left = posX + "px";
+        })
+        // 우측으로 이동
+        btR.addEventListener('click', function(){
+          console.log("posX=",posX);
+          if(posX<830)
+            posX += 10;
+          box.style.left = posX + "px";
+        })
+        //  왜 +인데아래로 갈까? -인데 위로 가고
+        // 상측으로 이동
+        btT.addEventListener('click', function(){
+          console.log("posY=",posY);
+          if(posY > 0)
+            posY -= 10;
+          box.style.top = posY + "px";
+        })
+        // 하측으로 이동
+        btB.addEventListener('click', function(){
+          console.log("posY=",posY);
+          if(posY<=280)
+            posY += 10;
+          box.style.top = posY + "px";
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <section>
+      <nav id ="box">
+
+      </nav>
+    </section>
+    <div id="btT"><b>상</b></div>
+    <div id="btL"><b>좌</b></div>
+    <div id="btR"><b>우</b></div>
+    <div id="btB"><b>하</b></div>
+  </body>
+</html>
